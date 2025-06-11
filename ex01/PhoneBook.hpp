@@ -18,8 +18,10 @@ class PhoneBook
 {
 private:
 	Contact contacts[8];
+	int		num_contacts;
 
 public:
+	PhoneBook();
 	void add(){};
 	void select(){};
 	void exit(){};

@@ -6,7 +6,7 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 14:21:32 by uschmidt          #+#    #+#             */
-/*   Updated: 2025/06/06 16:14:10 by uschmidt         ###   ########.fr       */
+/*   Updated: 2025/06/10 11:43:45 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef CONTACT_HPP
@@ -25,10 +25,9 @@ private:
 	int			_phone_number[ENTRY_LEN * 2];
 	std::string _darkest_secret;
 
-	Contact(int index) :
-		_index(index){};
-
 public:
+	Contact() : _index(-1) {}
+	Contact(int index) : _index(index) {}
 	int create_contact();
 };
 #endif

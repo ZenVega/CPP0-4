@@ -13,7 +13,9 @@
 SRC_FOLDER	= ./
 
 CFILES		= \
-			$(SRC_FOLDER)/phonebook.cpp\
+			$(SRC_FOLDER)/main.cpp\
+			$(SRC_FOLDER)/Contact.cpp\
+			$(SRC_FOLDER)/PhoneBook.cpp\
 
 OFILES 		= $(CFILES:.cpp=.o)
 
@@ -21,7 +23,7 @@ CC			= c++
 
 CFLAGS		= -g -Wall -Wextra -Werror -std=c++98
 
-NAME		= megaphone
+NAME		= phonebook
 
 all: $(NAME) 
 

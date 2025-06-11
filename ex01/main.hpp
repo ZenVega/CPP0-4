@@ -11,8 +11,12 @@
 /* ************************************************************************** */
 
 #include <array>
+#include <cctype>
+#include <iomanip>
+#include <iostream>
 #include <string>
-#define NUM_PROMPTS 5
+
+#define NUM_PROMPTS 6
 
 enum prompt_code
 {
@@ -20,5 +24,6 @@ enum prompt_code
 	LAST_NAME,
 	NICKNAME,
 	PHONE_NUMBER,
-	SECRET
+	SECRET,
+	COMMAND,
 };
