@@ -6,14 +6,14 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 14:21:32 by uschmidt          #+#    #+#             */
-/*   Updated: 2025/06/10 11:43:45 by uschmidt         ###   ########.fr       */
+/*   Updated: 2025/06/12 14:30:32 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
 #include <string>
-#include "main.hpp"
+#include "includes/main.hpp"
 
 #define ENTRY_LEN 10
 
@@ -31,6 +31,7 @@ public:
 	Contact();
 	Contact(int index);
 	int create_contact();
-	int print_contact();
+	int print_contact(int id);
 };
+
 #endif

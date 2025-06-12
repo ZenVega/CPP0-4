@@ -6,7 +6,7 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 11:21:41 by uschmidt          #+#    #+#             */
-/*   Updated: 2025/06/10 11:43:07 by uschmidt         ###   ########.fr       */
+/*   Updated: 2025/06/12 14:30:17 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,19 @@
 
 PhoneBook::PhoneBook()
 {
-		for (int i = 0; i < 8; i++)
-			contacts[i] = Contact(i);
-		num_contacts = 0;
+	for (int i = 0; i < 8; i++)
+		contacts[i] = Contact(i);
+	num_contacts = 0;
 }
 
 void	PhoneBook::add()
 {
-	contacts[0].create_contact();
+	contacts[num_contacts % 8].create_contact();
+	num_contacts++;
+};
+
+void	PhoneBook::search()
+{
+	for (int i = 0; i < num_contacts; i++)
+		contacts[i].print_contact(i);
 };

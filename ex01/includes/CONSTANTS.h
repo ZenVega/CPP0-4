@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   CONSTANTS.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/06 15:53:11 by uschmidt          #+#    #+#             */
-/*   Updated: 2025/06/12 14:27:00 by uschmidt         ###   ########.fr       */
+/*   Created: 2025/06/12 14:21:04 by uschmidt          #+#    #+#             */
+/*   Updated: 2025/06/12 14:21:21 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
-# include "Contact.hpp"
-
-class PhoneBook
+enum prompt_code
 {
-private:
-	Contact contacts[8];
-	int		num_contacts;
-
-public:
-	PhoneBook();
-
-	void add();
-
-	void search();
-
-	void exit();
+	FIRST_NAME,
+	LAST_NAME,
+	NICKNAME,
+	PHONE_NUMBER,
+	SECRET,
+	COMMAND,
 };
 
-#endif

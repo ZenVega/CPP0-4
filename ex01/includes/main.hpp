@@ -6,26 +6,22 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 16:28:22 by uschmidt          #+#    #+#             */
-/*   Updated: 2025/06/06 16:53:37 by uschmidt         ###   ########.fr       */
+/*   Updated: 2025/06/12 14:21:36 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <array>
-#include <cctype>
-#include <iomanip>
-#include <iostream>
-#include <string>
+#ifndef MAIN_HPP
+# define MAIN_HPP
 
-#define NUM_PROMPTS 6
+# include <array>
+# include <cctype>
+# include <iomanip>
+# include <iostream>
+# include <string>
+# include "CONSTANTS.h"
 
-enum prompt_code
-{
-	FIRST_NAME,
-	LAST_NAME,
-	NICKNAME,
-	PHONE_NUMBER,
-	SECRET,
-	COMMAND,
-};
+# define NUM_PROMPTS 6
 
 std::string get_user_input(prompt_code	prompt);
+
+#endif

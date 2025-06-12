@@ -6,12 +6,12 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 16:28:11 by uschmidt          #+#    #+#             */
-/*   Updated: 2025/06/06 16:57:43 by uschmidt         ###   ########.fr       */
+/*   Updated: 2025/06/12 14:34:13 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-#include "main.hpp"
+#include "includes/main.hpp"
 
 static std::array<std::string, NUM_PROMPTS> init_prompts()
 {
@@ -48,10 +48,11 @@ int main()
 
 	while (1)
 	{
+		command = get_user_input(COMMAND);
 		if (command.compare("ADD") == 0)
 			PB.add();
 		if (command.compare("SEARCH") == 0)
-			display_entries();
+			PB.search();
 		if (command.compare("EXIT") == 0)
 			break;
 	};

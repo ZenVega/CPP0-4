@@ -6,7 +6,7 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 16:06:11 by uschmidt          #+#    #+#             */
-/*   Updated: 2025/06/10 11:43:51 by uschmidt         ###   ########.fr       */
+/*   Updated: 2025/06/12 14:31:42 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,15 @@ int Contact::create_contact()
 	_nickname = get_user_input(NICKNAME);
 	_phone_number = get_user_input(PHONE_NUMBER);
 	_secret = get_user_input(SECRET);
+	return (0);
+};
+
+int Contact::print_contact(int id)
+{
+	std::cout << id << " | ";
+	std::cout << _first_name << " | ";
+	std::cout << _last_name << " | ";
+	std::cout << _phone_number << " | ";
+	std::cout << _secret << std::endl;
 	return (0);
 };
