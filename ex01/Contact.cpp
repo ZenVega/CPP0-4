@@ -6,7 +6,7 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 16:06:11 by uschmidt          #+#    #+#             */
-/*   Updated: 2025/06/12 14:31:42 by uschmidt         ###   ########.fr       */
+/*   Updated: 2025/06/12 15:02:50 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int Contact::create_contact()
 	std::string	phone_number;
 	std::string	secret;
 
+	//TODO: fields cannot be empty
+	//TODO: phonenumber should be number
 	_first_name = get_user_input(FIRST_NAME);
 	_last_name = get_user_input(LAST_NAME);
 	_nickname = get_user_input(NICKNAME);
@@ -38,8 +40,9 @@ int Contact::create_contact()
 	return (0);
 };
 
-int Contact::print_contact(int id)
+int Contact::print_contact_trunc(int id)
 {
+	//TODO: truncate to 10 digits
 	std::cout << id << " | ";
 	std::cout << _first_name << " | ";
 	std::cout << _last_name << " | ";
@@ -47,3 +50,7 @@ int Contact::print_contact(int id)
 	std::cout << _secret << std::endl;
 	return (0);
 };
+int Contact::print_contact(int id)
+{
+	return (0);
+}

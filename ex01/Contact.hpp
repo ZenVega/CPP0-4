@@ -6,7 +6,7 @@
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 14:21:32 by uschmidt          #+#    #+#             */
-/*   Updated: 2025/06/12 14:30:32 by uschmidt         ###   ########.fr       */
+/*   Updated: 2025/06/12 15:02:27 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef CONTACT_HPP
@@ -31,6 +31,7 @@ public:
 	Contact();
 	Contact(int index);
 	int create_contact();
+	int print_contact_trunc(int id);
 	int print_contact(int id);
 };
 
