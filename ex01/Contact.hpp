@@ -13,6 +13,8 @@
 #define CONTACT_HPP
 
 #include <string>
+#include "main.hpp"
+
 #define ENTRY_LEN 10
 
 class Contact
@@ -22,12 +24,13 @@ private:
 	std::string _first_name;
 	std::string _last_name;
 	std::string _nickname;
-	int			_phone_number[ENTRY_LEN * 2];
-	std::string _darkest_secret;
+	std::string _phone_number;
+	std::string _secret;
 
 public:
-	Contact() : _index(-1) {}
-	Contact(int index) : _index(index) {}
+	Contact();
+	Contact(int index);
 	int create_contact();
+	int print_contact();
 };
 #endif

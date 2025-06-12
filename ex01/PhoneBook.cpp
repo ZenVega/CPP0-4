@@ -18,3 +18,8 @@ PhoneBook::PhoneBook()
 			contacts[i] = Contact(i);
 		num_contacts = 0;
 }
+
+void	PhoneBook::add()
+{
+	contacts[0].create_contact();
+};

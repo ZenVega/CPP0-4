@@ -22,9 +22,12 @@ private:
 
 public:
 	PhoneBook();
-	void add(){};
-	void select(){};
-	void exit(){};
+
+	void add();
+
+	void select();
+
+	void exit();
 };
 
 #endif

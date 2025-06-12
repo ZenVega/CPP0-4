@@ -27,3 +27,5 @@ enum prompt_code
 	SECRET,
 	COMMAND,
 };
+
+std::string get_user_input(prompt_code	prompt);

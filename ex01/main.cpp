@@ -27,10 +27,12 @@ static std::array<std::string, NUM_PROMPTS> init_prompts()
 	return (prompts);
 }
 
-static std::string get_user_input(
-	prompt_code							 prompt,
-	std::array<std::string, NUM_PROMPTS> prompts)
+std::string get_user_input(prompt_code	prompt)
 {
+	
+	std::array<std::string, NUM_PROMPTS> prompts;
+	
+	prompts = init_prompts();
 	std::string input;
 	std::cout << prompts[prompt] << std::endl;
 	std::getline(std::cin, input);
@@ -41,13 +43,11 @@ static void display_entries(void){};
 
 int main()
 {
-	std::string							 command;
-	std::array<std::string, NUM_PROMPTS> prompts = init_prompts();
-	PhoneBook							 PB;
+	std::string	command;
+	PhoneBook	PB;
 
 	while (1)
 	{
-		command = get_user_input(COMMAND, prompts);
 		if (command.compare("ADD") == 0)
 			PB.add();
 		if (command.compare("SEARCH") == 0)
