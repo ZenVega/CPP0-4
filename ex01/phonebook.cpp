@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.hpp                                           :+:      :+:    :+:   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/06 16:28:22 by uschmidt          #+#    #+#             */
-/*   Updated: 2025/06/12 14:21:36 by uschmidt         ###   ########.fr       */
+/*   Created: 2025/06/06 16:28:11 by uschmidt          #+#    #+#             */
+/*   Updated: 2025/06/16 15:09:27 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_HPP
-#define MAIN_HPP
+#include "PhoneBook/PhoneBook.hpp"
+#include "includes/main.hpp"
 
-#include "CONSTANTS.h"
-#include <cctype>
-#include <iomanip>
-#include <iostream>
-#include <string>
+int main() {
+  std::string command;
+  PhoneBook PB;
 
-#define NUM_PROMPTS 6
-
-std::string get_user_input(prompt_code prompt);
-
-#endif
+  while (1) {
+    command = get_user_input(COMMAND);
+    if (command.compare("ADD") == 0)
+      PB.add();
+    if (command.compare("SEARCH") == 0)
+      PB.search();
+    if (command.compare("EXIT") == 0)
+      break;
+  };
+}

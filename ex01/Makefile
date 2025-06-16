@@ -6,32 +6,42 @@
 #    By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/04 15:45:04 by uschmidt          #+#    #+#              #
-#    Updated: 2025/06/04 15:46:50 by uschmidt         ###   ########.fr        #
+#    Updated: 2025/06/16 15:14:55 by uschmidt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME		= phonebook
+
 SRC_FOLDER	= ./
+OBJ_FOLDER	= ofiles/
 
-CFILES		= \
-			$(SRC_FOLDER)/main.cpp\
-			$(SRC_FOLDER)/Contact.cpp\
-			$(SRC_FOLDER)/PhoneBook.cpp\
+CFILES		:=
+vpath %.cpp $(SRC_FOLDER)
+CFILES += $(NAME).cpp
 
-OFILES 		= $(CFILES:.cpp=.o)
+vpath %.cpp $(SRC_FOLDER)Contact
+CFILES += Contact.cpp
+
+vpath %.cpp $(SRC_FOLDER)PhoneBook
+CFILES += PhoneBook.cpp
+
+vpath %.cpp $(SRC_FOLDER)utils
+CFILES += utils.cpp
+
+OFILES      = $(addprefix $(OBJ_FOLDER), $(notdir $(CFILES:.cpp=.o)))
 
 CC			= c++
 
 CFLAGS		= -g -Wall -Wextra -Werror -std=c++98
-
-NAME		= phonebook
 
 all: $(NAME) 
 
 $(NAME): $(OFILES)
 	$(CC) $(CFLAGS) $(SANITIZER) -o $(SRC_FOLDER)$(NAME) $(OFILES)
 
-%.o: %.c $(DEPS)
-	$(CC) $(CFLAGS) $(SANITIZER) -I/usr/include -g -c $< -o $@
+$(OBJ_FOLDER)%.o: %.cpp $(DEPS)
+	mkdir -p $(OBJ_FOLDER)
+	$(CC) $(CFLAGS) -g -c $< -o $@
 
 clean:
 	rm -f $(OFILES)

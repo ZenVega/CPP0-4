@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/10 11:21:41 by uschmidt          #+#    #+#             */
-/*   Updated: 2025/06/12 14:30:17 by uschmidt         ###   ########.fr       */
+/*   Created: 2025/06/06 15:53:11 by uschmidt          #+#    #+#             */
+/*   Updated: 2025/06/16 15:17:30 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
-PhoneBook::PhoneBook()
-{
-	for (int i = 0; i < 8; i++)
-		contacts[i] = Contact(i);
-	num_contacts = 0;
-}
+#include "../Contact/Contact.hpp"
 
-void	PhoneBook::add()
-{
-	contacts[num_contacts % 8].create_contact();
-	num_contacts++;
+class PhoneBook {
+private:
+  Contact contacts[8];
+  int num_contacts;
+
+public:
+  PhoneBook();
+
+  void add();
+
+  void search();
+
+  void exit();
 };
 
-void	PhoneBook::search()
-{
-	for (int i = 0; i < num_contacts; i++)
-		contacts[i].print_contact(i);
-};
+#endif

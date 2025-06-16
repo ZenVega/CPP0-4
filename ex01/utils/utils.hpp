@@ -1,38 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   utils.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: uschmidt <uschmidt@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/05 14:21:32 by uschmidt          #+#    #+#             */
-/*   Updated: 2025/06/12 15:02:27 by uschmidt         ###   ########.fr       */
+/*   Created: 2025/06/16 14:56:18 by uschmidt          #+#    #+#             */
+/*   Updated: 2025/06/16 15:01:30 by uschmidt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef CONTACT_HPP
-#define CONTACT_HPP
 
+#ifndef UTILS_HPP
+#define UTILS_HPP
+
+#include "../includes/CONSTANTS.h"
 #include <string>
-#include "includes/main.hpp"
 
-#define ENTRY_LEN 10
-
-class Contact
-{
-private:
-	int			_index;
-	std::string _first_name;
-	std::string _last_name;
-	std::string _nickname;
-	std::string _phone_number;
-	std::string _secret;
-
-public:
-	Contact();
-	Contact(int index);
-	int create_contact();
-	int print_contact_trunc(int id);
-	int print_contact(int id);
-};
+int log_action(std::string subject, action_code action);
 
 #endif
