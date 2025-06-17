@@ -13,15 +13,20 @@
 #ifndef CONSTANTS_HPP
 #define CONSTANTS_HPP
 
-enum prompt_code {
-  FIRST_NAME,
-  LAST_NAME,
-  NICKNAME,
-  PHONE_NUMBER,
-  SECRET,
-  COMMAND,
+enum prompt_code
+{
+	FIRST_NAME,
+	LAST_NAME,
+	NICKNAME,
+	PHONE_NUMBER,
+	SECRET,
+	COMMAND,
 };
 
-enum action_code { EMPTY, NO_NUMBER };
+enum action_code
+{
+	EMPTY,
+	NO_NUMBER
+};
 
 #endif

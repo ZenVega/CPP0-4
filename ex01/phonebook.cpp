@@ -13,17 +13,19 @@
 #include "PhoneBook/PhoneBook.hpp"
 #include "includes/main.hpp"
 
-int main() {
-  std::string command;
-  PhoneBook PB;
+int main()
+{
+	std::string command;
+	PhoneBook	PB;
 
-  while (1) {
-    command = get_user_input(COMMAND);
-    if (command.compare("ADD") == 0)
-      PB.add();
-    if (command.compare("SEARCH") == 0)
-      PB.search();
-    if (command.compare("EXIT") == 0)
-      break;
-  };
+	while (1)
+	{
+		command = get_user_input(COMMAND);
+		if (command.compare("ADD") == 0)
+			PB.add();
+		if (command.compare("SEARCH") == 0)
+			PB.search();
+		if (command.compare("EXIT") == 0)
+			break;
+	};
 }

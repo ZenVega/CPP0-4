@@ -18,21 +18,22 @@
 
 #define ENTRY_LEN 10
 
-class Contact {
+class Contact
+{
 private:
-  int _index;
-  std::string _first_name;
-  std::string _last_name;
-  std::string _nickname;
-  std::string _phone_number;
-  std::string _secret;
+	int			_index;
+	std::string _first_name;
+	std::string _last_name;
+	std::string _nickname;
+	std::string _phone_number;
+	std::string _secret;
 
 public:
-  Contact();
-  Contact(int index);
-  int create_contact();
-  int print_contact_trunc(int id);
-  int print_contact(int id);
+	Contact();
+	Contact(int index);
+	int create_contact();
+	int print_contact_trunc(int id);
+	int print_contact(int id);
 };
 
 #endif

@@ -12,18 +12,21 @@
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() {
-  for (int i = 0; i < 8; i++)
-    contacts[i] = Contact(i);
-  num_contacts = 0;
+PhoneBook::PhoneBook()
+{
+	for (int i = 0; i < 8; i++)
+		contacts[i] = Contact(i);
+	num_contacts = 0;
 }
 
-void PhoneBook::add() {
-  contacts[num_contacts % 8].create_contact();
-  num_contacts++;
+void PhoneBook::add()
+{
+	contacts[num_contacts % 8].create_contact();
+	num_contacts++;
 };
 
-void PhoneBook::search() {
-  for (int i = 0; i < num_contacts; i++)
-    contacts[i].print_contact(i);
+void PhoneBook::search()
+{
+	for (int i = 0; i < num_contacts; i++)
+		contacts[i].print_contact(i);
 };
