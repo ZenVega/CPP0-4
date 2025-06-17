@@ -21,6 +21,4 @@
 
 #define NUM_PROMPTS 6
 
-std::string get_user_input(prompt_code prompt);
-
 #endif

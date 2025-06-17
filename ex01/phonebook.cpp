@@ -20,7 +20,7 @@ int main()
 
 	while (1)
 	{
-		command = get_user_input(COMMAND);
+		command = get_user_input(COMMAND, 1);
 		if (command.compare("ADD") == 0)
 			PB.add();
 		if (command.compare("SEARCH") == 0)

@@ -24,24 +24,38 @@ Contact::Contact(int index)
 
 int Contact::create_contact()
 {
-	std::string first_name;
-	std::string last_name;
-	std::string nickname;
-	std::string phone_number;
-	std::string secret;
-
-	// TODO: fields cannot be empty
-	// TODO: phonenumber should be number
-	while (first_name.empty())
+	while (_first_name.empty())
 	{
-		first_name = get_user_input(FIRST_NAME);
-		if (first_name.empty())
+		_first_name = get_user_input(FIRST_NAME, 0);
+		if (_first_name.empty())
 			log_action("first name", EMPTY);
 	}
-	_last_name	  = get_user_input(LAST_NAME);
-	_nickname	  = get_user_input(NICKNAME);
-	_phone_number = get_user_input(PHONE_NUMBER);
-	_secret		  = get_user_input(SECRET);
+	while (_last_name.empty())
+	{
+		_last_name = get_user_input(LAST_NAME, 0);
+		if (_last_name.empty())
+			log_action("last name", EMPTY);
+	}
+	while (_nickname.empty())
+	{
+		_nickname = get_user_input(NICKNAME, 0);
+		if (_nickname.empty())
+			log_action("nickname", EMPTY);
+	}
+	while (_phone_number.empty() || !is_numeric(_phone_number))
+	{
+		_phone_number = get_user_input(PHONE_NUMBER, 0);
+		if (_phone_number.empty())
+			log_action("phone number", EMPTY);
+		else if (!is_numeric(_phone_number))
+			log_action("phone number", NO_NUMBER);
+	}
+	while (_secret.empty())
+	{
+		_secret = get_user_input(SECRET, 0);
+		if (_secret.empty())
+			log_action("secret", EMPTY);
+	}
 	return (0);
 };
 

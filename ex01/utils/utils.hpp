@@ -17,6 +17,8 @@
 #include <iostream>
 #include <string>
 
-int log_action(std::string subject, action_code action);
+int			log_action(std::string subject, action_code action);
+std::string get_user_input(prompt_code prompt, int nl);
+int			is_numeric(std::string number);
 
 #endif
