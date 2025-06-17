@@ -21,12 +21,13 @@
 class Contact
 {
 private:
-	int			_index;
-	std::string _first_name;
-	std::string _last_name;
-	std::string _nickname;
-	std::string _phone_number;
-	std::string _secret;
+	int						   _index;
+	std::string				   _first_name;
+	std::string				   _last_name;
+	std::string				   _nickname;
+	std::string				   _phone_number;
+	std::string				   _secret;
+	std::vector<std::string *> _data;
 
 public:
 	Contact();

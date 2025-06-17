@@ -28,5 +28,5 @@ void PhoneBook::add()
 void PhoneBook::search()
 {
 	for (int i = 0; i < num_contacts; i++)
-		contacts[i].print_contact(i);
+		contacts[i].print_contact_trunc(i);
 };

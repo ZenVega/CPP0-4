@@ -13,6 +13,7 @@
 #ifndef CONSTANTS_HPP
 #define CONSTANTS_HPP
 
+#define STR_MAX 10
 enum prompt_code
 {
 	FIRST_NAME = 0,

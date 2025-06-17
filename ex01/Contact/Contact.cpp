@@ -56,17 +56,29 @@ int Contact::create_contact()
 		if (_secret.empty())
 			log_action("secret", EMPTY);
 	}
+	_data.push_back(&_first_name);
+	_data.push_back(&_last_name);
+	_data.push_back(&_nickname);
+	_data.push_back(&_phone_number);
+	_data.push_back(&_secret);
 	return (0);
 };
 
 int Contact::print_contact_trunc(int id)
 {
-	// TODO: truncate to 10 digits
+	std::cout << std::setfill(' ') << std::setw(10);
 	std::cout << id << " | ";
-	std::cout << _first_name << " | ";
-	std::cout << _last_name << " | ";
-	std::cout << _phone_number << " | ";
-	std::cout << _secret << std::endl;
+	for (size_t i = 0; i < 3; i++)
+	{
+		if (_data[i]->length() > 10)
+		{
+			_data[i]->resize(STR_MAX - 1);
+			_data[i]->insert(9, ".");
+		}
+		std::cout << std::setfill(' ') << std::setw(10);
+		std::cout << *(_data[i]) << " | ";
+	}
+	std::cout << std::endl;
 	return (0);
 };
 

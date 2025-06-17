@@ -16,6 +16,7 @@
 #include "../includes/CONSTANTS.h"
 #include <iostream>
 #include <string>
+#include <vector>
 
 int			log_action(std::string subject, action_code action);
 std::string get_user_input(prompt_code prompt, int nl);

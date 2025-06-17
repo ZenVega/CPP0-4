@@ -62,8 +62,7 @@ int log_action(std::string subject, action_code action)
 
 	std::cout << "\033[1;31m";
 	std::cout << subject << get_action(action);
-	std::cout << "\033[0m";
-	std::cout << std::endl;
+	std::cout << "\033[0m" << std::endl;
 	return (0);
 }
 
