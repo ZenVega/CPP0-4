@@ -13,6 +13,7 @@
 #ifndef MAIN_HPP
 #define MAIN_HPP
 
+#include "../utils/utils.hpp"
 #include "CONSTANTS.h"
 #include <cctype>
 #include <iomanip>

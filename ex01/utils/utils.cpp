@@ -36,6 +36,8 @@ static std::string get_action(action_code prompt)
 		return (" field cannot be empty");
 	else if (prompt == NO_NUMBER)
 		return (" has to be only numbers");
+	else if (prompt == WELCOME)
+		return ("Welcome to your Phonebook!");
 
 	return ("error");
 }
@@ -57,7 +59,11 @@ void display_entries(void){};
 
 int log_action(std::string subject, action_code action)
 {
-	std::cout << subject << get_action(action) << std::endl;
+
+	std::cout << "\033[1;31m";
+	std::cout << subject << get_action(action);
+	std::cout << "\033[0m";
+	std::cout << std::endl;
 	return (0);
 }
 

@@ -15,7 +15,7 @@
 
 enum prompt_code
 {
-	FIRST_NAME,
+	FIRST_NAME = 0,
 	LAST_NAME,
 	NICKNAME,
 	PHONE_NUMBER,
@@ -26,7 +26,8 @@ enum prompt_code
 enum action_code
 {
 	EMPTY,
-	NO_NUMBER
+	NO_NUMBER,
+	WELCOME,
 };
 
 #endif

@@ -18,6 +18,7 @@ int main()
 	std::string command;
 	PhoneBook	PB;
 
+	log_action("", WELCOME);
 	while (1)
 	{
 		command = get_user_input(COMMAND, 1);
