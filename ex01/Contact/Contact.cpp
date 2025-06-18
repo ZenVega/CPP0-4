@@ -79,7 +79,9 @@ int Contact::print_contact_trunc(void)
 			_data[i]->insert(9, ".");
 		}
 		std::cout << std::setfill(' ') << std::setw(10);
-		std::cout << *(_data[i]) << " | ";
+		std::cout << *(_data[i]);
+		if (i < 2)
+			std::cout << " | ";
 	}
 	std::cout << std::endl;
 	return (0);
@@ -87,12 +89,14 @@ int Contact::print_contact_trunc(void)
 
 int Contact::print_contact(void)
 {
+	std::cout << std::endl;
 	std::cout << "Entry: " << _index << std::endl;
 	std::cout << "First Name: " << _first_name << std::endl;
 	std::cout << "Last Name: " << _last_name << std::endl;
 	std::cout << "Nickname: " << _nickname << std::endl;
 	std::cout << "Phone: " << _phone_number << std::endl;
 	std::cout << "Secret: " << _secret << std::endl;
+	std::cout << std::endl;
 	return (0);
 }
 

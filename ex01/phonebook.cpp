@@ -24,11 +24,11 @@ int main()
 		command = get_user_input(COMMAND, 1);
 		if (command.compare("ADD") == 0)
 			PB.add();
-		if (command.compare("SEARCH") == 0)
+		else if (command.compare("SEARCH") == 0)
 			PB.search();
-		if (command.compare("EXIT") == 0)
+		else if (command.compare("EXIT") == 0)
 			break;
-		else
+		else if (!command.empty())
 			log_action("", CMD_UNKNOWN);
 	};
 }

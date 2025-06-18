@@ -17,7 +17,7 @@ PhoneBook::PhoneBook()
 	for (int i = 0; i < MAX_CONTACTS; i++)
 		contacts[i] = Contact(i);
 	num_contacts = 0;
-	last_index	 = 0;
+	last_index	 = -1;
 }
 
 void PhoneBook::add()
@@ -29,14 +29,26 @@ void PhoneBook::add()
 		last_index = MAX_CONTACTS;
 };
 
+static int print_header(void)
+{
+	std::string header = "     INDEX | FIRST NAME |  LAST NAME |   NICKNAME";
+	std::cout << std::endl;
+	std::cout << "\033[1;33m";
+	std::cout << header;
+	std::cout << "\033[0m" << std::endl;
+	return (0);
+}
+
 void PhoneBook::search()
 {
+	// TODO: check for exitsting contacts
 	std::string id;
+	print_header();
 	for (int i = 0; i < last_index; i++)
 		contacts[i].print_contact_trunc();
 
 	id = get_user_input(ENTRY, 1);
-	while (id == "" || id[1] || !std::isdigit(id[0]) || std::atoi(id.c_str()) > num_contacts)
+	while (id == "" || id[1] || !std::isdigit(id[0]) || std::atoi(id.c_str()) > last_index)
 	{
 		log_action("", INVALID_ID);
 		id = get_user_input(ENTRY, 1);
