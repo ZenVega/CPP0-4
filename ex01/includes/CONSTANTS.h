@@ -14,7 +14,7 @@
 #define CONSTANTS_HPP
 
 #define STR_MAX 10
-#define MAX_CONTACTS 2
+#define MAX_CONTACTS 8
 
 enum prompt_code
 {
