@@ -14,6 +14,8 @@
 #define CONSTANTS_HPP
 
 #define STR_MAX 10
+#define MAX_CONTACTS 2
+
 enum prompt_code
 {
 	FIRST_NAME = 0,
@@ -22,6 +24,7 @@ enum prompt_code
 	PHONE_NUMBER,
 	SECRET,
 	COMMAND,
+	ENTRY,
 };
 
 enum action_code
@@ -29,6 +32,8 @@ enum action_code
 	EMPTY,
 	NO_NUMBER,
 	WELCOME,
+	INVALID_ID,
+	CMD_UNKNOWN,
 };
 
 #endif

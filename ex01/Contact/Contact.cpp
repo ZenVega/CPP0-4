@@ -24,6 +24,8 @@ Contact::Contact(int index)
 
 int Contact::create_contact()
 {
+	if (!_first_name.empty())
+		clear_contact();
 	while (_first_name.empty())
 	{
 		_first_name = get_user_input(FIRST_NAME, 0);
@@ -56,6 +58,7 @@ int Contact::create_contact()
 		if (_secret.empty())
 			log_action("secret", EMPTY);
 	}
+	_data.clear();
 	_data.push_back(&_first_name);
 	_data.push_back(&_last_name);
 	_data.push_back(&_nickname);
@@ -64,10 +67,10 @@ int Contact::create_contact()
 	return (0);
 };
 
-int Contact::print_contact_trunc(int id)
+int Contact::print_contact_trunc(void)
 {
 	std::cout << std::setfill(' ') << std::setw(10);
-	std::cout << id << " | ";
+	std::cout << _index << " | ";
 	for (size_t i = 0; i < 3; i++)
 	{
 		if (_data[i]->length() > 10)
@@ -82,7 +85,23 @@ int Contact::print_contact_trunc(int id)
 	return (0);
 };
 
-int Contact::print_contact(int id)
+int Contact::print_contact(void)
 {
-	return (id);
+	std::cout << "Entry: " << _index << std::endl;
+	std::cout << "First Name: " << _first_name << std::endl;
+	std::cout << "Last Name: " << _last_name << std::endl;
+	std::cout << "Nickname: " << _nickname << std::endl;
+	std::cout << "Phone: " << _phone_number << std::endl;
+	std::cout << "Secret: " << _secret << std::endl;
+	return (0);
+}
+
+int Contact::clear_contact(void)
+{
+	_first_name.clear();
+	_last_name.clear();
+	_nickname.clear();
+	_phone_number.clear();
+	_secret.clear();
+	return (0);
 }

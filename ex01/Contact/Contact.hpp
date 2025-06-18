@@ -33,8 +33,9 @@ public:
 	Contact();
 	Contact(int index);
 	int create_contact();
-	int print_contact_trunc(int id);
-	int print_contact(int id);
+	int print_contact_trunc(void);
+	int print_contact(void);
+	int clear_contact(void);
 };
 
 #endif

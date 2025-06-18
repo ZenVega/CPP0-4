@@ -14,12 +14,16 @@
 #define PHONEBOOK_HPP
 
 #include "../Contact/Contact.hpp"
+#include <cstdlib>
+#include <cstring>
+#include <string>
 
 class PhoneBook
 {
 private:
-	Contact contacts[8];
+	Contact contacts[MAX_CONTACTS];
 	int		num_contacts;
+	int		last_index;
 
 public:
 	PhoneBook();

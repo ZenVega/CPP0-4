@@ -26,6 +26,8 @@ static std::string get_prompt(prompt_code prompt)
 		return ("tell me your deepest secret");
 	else if (prompt == COMMAND)
 		return ("enter ADD, SEARCH or EXIT");
+	else if (prompt == ENTRY)
+		return ("select entry");
 
 	return ("error");
 }
@@ -38,6 +40,10 @@ static std::string get_action(action_code prompt)
 		return (" has to be only numbers");
 	else if (prompt == WELCOME)
 		return ("Welcome to your Phonebook!");
+	else if (prompt == INVALID_ID)
+		return ("index not valid");
+	else if (prompt == CMD_UNKNOWN)
+		return ("unknown command");
 
 	return ("error");
 }

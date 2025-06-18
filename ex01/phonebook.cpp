@@ -28,5 +28,7 @@ int main()
 			PB.search();
 		if (command.compare("EXIT") == 0)
 			break;
+		else
+			log_action("", CMD_UNKNOWN);
 	};
 }
