@@ -30,5 +30,6 @@ int main()
 			break;
 		else if (!command.empty())
 			log_action("", CMD_UNKNOWN);
+		// command.clear();
 	};
 }

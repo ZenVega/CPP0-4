@@ -71,15 +71,17 @@ int Contact::print_contact_trunc(void)
 {
 	std::cout << std::setfill(' ') << std::setw(10);
 	std::cout << _index << " | ";
+	std::string tmp;
 	for (size_t i = 0; i < 3; i++)
 	{
-		if (_data[i]->length() > 10)
+		tmp = *_data[i];
+		if (tmp.length() > 10)
 		{
-			_data[i]->resize(STR_MAX - 1);
-			_data[i]->insert(9, ".");
+			tmp.resize(STR_MAX - 1);
+			tmp.insert(9, ".");
 		}
 		std::cout << std::setfill(' ') << std::setw(10);
-		std::cout << *(_data[i]);
+		std::cout << tmp;
 		if (i < 2)
 			std::cout << " | ";
 	}
