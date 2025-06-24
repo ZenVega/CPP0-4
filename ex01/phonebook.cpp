@@ -17,6 +17,7 @@ int main()
 {
 	std::string command;
 	PhoneBook	PB;
+	Contact		contact(0);
 
 	log_action("", WELCOME);
 	while (1)

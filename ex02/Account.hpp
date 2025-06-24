@@ -11,6 +11,9 @@
 #ifndef __ACCOUNT_H__
 #define __ACCOUNT_H__
 
+#include <cctype>
+#include <cstdlib>
+#include <iostream>
 // ************************************************************************** //
 //                               Account Class                                //
 // ************************************************************************** //
@@ -18,6 +21,7 @@
 class Account
 {
 private:
+	// These are global for all instances of this Class
 	static int _nbAccounts;
 	static int _totalAmount;
 	static int _totalNbDeposits;
@@ -25,6 +29,7 @@ private:
 
 	static void _displayTimestamp(void);
 
+	// These are local for a single object
 	int _accountIndex;
 	int _amount;
 	int _nbDeposits;
@@ -33,7 +38,7 @@ private:
 	Account(void);
 
 public:
-	typedef Account t;
+	typedef Account t; // inside Class t can be used replacable
 
 	static int	getNbAccounts(void);
 	static int	getTotalAmount(void);
@@ -46,7 +51,7 @@ public:
 
 	void makeDeposit(int deposit);
 	bool makeWithdrawal(int withdrawal);
-	int	 checkAmount(void) const;
+	int	 checkAmount(void) const; // const here defines this function as not mutating the object
 	void displayStatus(void) const;
 };
 
